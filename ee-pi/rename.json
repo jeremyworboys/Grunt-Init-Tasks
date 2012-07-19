@@ -1,0 +1,3 @@
+{
+    "src/name.php": "src/pi.{%= name %}.php"
+}

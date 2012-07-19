@@ -1,0 +1,3 @@
+{
+    "src/name.php": "src/ext.{%= name %}.php"
+}

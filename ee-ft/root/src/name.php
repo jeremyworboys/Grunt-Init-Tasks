@@ -14,9 +14,9 @@ require PATH_THIRD.'{%= name %}/config.php';
 class {%= class_name %}_ft extends EE_Fieldtype {
 
     public $info = array(
-        'name'    = {%= upper_name %}_NAME,
-        'version' = {%= upper_name %}_VERSION
-    )
+        'name'    => {%= upper_name %}_NAME,
+        'version' => {%= upper_name %}_VERSION
+    );
 
 
     /**

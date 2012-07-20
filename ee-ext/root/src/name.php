@@ -17,7 +17,7 @@ class {%= class_name %}_ext {
     public $version         = {%= upper_name %}_VERSION;
     public $description     = '{%= description %}';
     public $settings_exist  = 'y';
-    public $docs_url        = {%= homepage %};
+    public $docs_url        = '{%= homepage %}';
 
     protected $settings     = array();
 

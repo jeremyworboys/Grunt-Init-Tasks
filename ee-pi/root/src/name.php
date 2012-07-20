@@ -23,7 +23,7 @@ $plugin_info = array(
  * @author     {%= author_name %} <{%= author_email %}>
  * @link       {%= homepage %}
  * @copyright  Copyright (c) {%= grunt.template.today('yyyy') %} {%= author_name %}
- * @license    Licensed under the ☺ license <http://licence.visualidiot.com/>
+ * @license    Licensed under the {%= licenses %} license.
  */
 class {%= class_name %} {
 

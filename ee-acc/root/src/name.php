@@ -9,7 +9,6 @@ require PATH_THIRD.'{%= name %}/config.php';
  * @author     {%= author_name %} <{%= author_email %}>
  * @link       {%= homepage %}
  * @copyright  Copyright (c) {%= grunt.template.today('yyyy') %} {%= author_name %}
- * @license    Licensed under the {%= licenses %} license.
  */
 class {%= class_name %}_acc {
 
@@ -43,28 +42,6 @@ class {%= class_name %}_acc {
     public function set_sections()
     {
         $this->sections['HEADING'] = 'CONTENT';
-    }
-
-
-    /**
-     * Install
-     *
-     * Create any db tables.
-     */
-    public function install()
-    {
-        // code...
-    }
-
-
-    /**
-     * Uninstall
-     *
-     * Remove any db tables.
-     */
-    public function uninstall()
-    {
-        // code...
     }
 }
 // END CLASS

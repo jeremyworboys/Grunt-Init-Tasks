@@ -15,9 +15,6 @@ exports.template = function(grunt, init, done) {
 
     var prompts = grunt.helper('prompt_for_obj');
 
-    // Fix validator to allow ☺ license
-    prompts.licenses.validator = /^[☺\w\-]+(?:\s+[\w\-]+)*$/;
-
     grunt.helper('prompt', {},
         [
             // Prompt for these values.
@@ -25,9 +22,7 @@ exports.template = function(grunt, init, done) {
             grunt.helper('prompt_for', 'title'),
             grunt.helper('prompt_for', 'description'),
             grunt.helper('prompt_for', 'version'),
-            grunt.helper('prompt_for', 'repository'),
             grunt.helper('prompt_for', 'homepage'),
-            grunt.helper('prompt_for', 'licenses', '☺'),
             grunt.helper('prompt_for', 'author_name'),
             grunt.helper('prompt_for', 'author_email'),
             grunt.helper('prompt_for', 'author_url')
@@ -40,9 +35,6 @@ exports.template = function(grunt, init, done) {
 
             // Files to copy (and process).
             var files = init.filesToCopy(props);
-
-            // Add properly-named license files.
-            init.addLicenseFiles(files, props.licenses);
 
             // Actually copy (and process) files.
             init.copyAndProcess(files, props);

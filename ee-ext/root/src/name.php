@@ -9,7 +9,6 @@ require PATH_THIRD.'{%= name %}/config.php';
  * @author     {%= author_name %} <{%= author_email %}>
  * @link       {%= homepage %}
  * @copyright  Copyright (c) {%= grunt.template.today('yyyy') %} {%= author_name %}
- * @license    Licensed under the {%= licenses %} license.
  */
 class {%= class_name %}_ext {
 
@@ -35,6 +34,20 @@ class {%= class_name %}_ext {
 
         $this->settings = $settings;
     }
+
+
+    /**
+     * HOOK TITLE
+     *
+     * DESCRIPTION
+     */
+    public function hook_name()
+    {
+        // code...
+    }
+
+
+    // -------------------------------------------------------------------------
 
 
     /**
@@ -74,13 +87,28 @@ class {%= class_name %}_ext {
 
 
     /**
-     * HOOK TITLE
+     * Update Extension
      *
-     * DESCRIPTION
+     * This function performs any necessary db updates when the extension
+     * page is visited
+     *
+     * @return mixed Void on update / false if none
      */
-    public function hook_name()
+    function update_extension($current = '')
     {
-        // code...
+        if ($current == '' OR $current == $this->version) {
+            return FALSE;
+        }
+
+        if ($current < '1.0.0') {
+            // Update to version 1.0.0
+        }
+
+        $this->EE->db
+            ->where('class', __CLASS__)
+            ->update('extensions', array(
+                'version' => $this->version
+            ));
     }
 }
 // END CLASS

@@ -23,7 +23,6 @@ $plugin_info = array(
  * @author     {%= author_name %} <{%= author_email %}>
  * @link       {%= homepage %}
  * @copyright  Copyright (c) {%= grunt.template.today('yyyy') %} {%= author_name %}
- * @license    Licensed under the {%= licenses %} license.
  */
 class {%= class_name %} {
 
@@ -32,47 +31,50 @@ class {%= class_name %} {
     /**
      * Constructor
      *
-     * @param mixed Settings array or empty string if none exist.
+     * Handles {exp:{%= name%}}
      */
     public function __construct()
     {
         $this->EE =& get_instance();
 
         // Set output when no method is called
-        $return_data = "";
+        $this->return_data = "";
     }
 
 
     /**
-     * Install
+     * METHOD
      *
      * Handles {exp:{%= name%}:METHOD}
      */
     public function METHOD()
     {
-        // code...
+        $this->return_data = "";
     }
 
 
    /**
      * Usage
      *
-     * @return string How to use this plugin.
+     * @return string How to use this plugin
      */
     public function usage()
     {
         ob_start(); ?>
 
-Simple MailChimp
+{%= name %}
 ===========================
 
-...
+{%= description %}
 
 
-Parameters
+Tags
 ===========================
 
-The tag has xxxx possible parameters:
+tag name
+---------------------------
+
+The tag has the following parameters:
 
 - ...
 
@@ -107,7 +109,7 @@ Changelog
 Version {%= version %}
 ---------------------------
 
-- ...
+- Initial release
 
     <?php
         $buffer = ob_get_contents();

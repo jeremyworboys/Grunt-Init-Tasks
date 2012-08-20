@@ -30,7 +30,7 @@ class {%= class_name %}_tab {
      * @param string The entry_id if this is an edit, empty otherwise
      * @return array The display settings and values associated with each of the fields
      */
-    public publish_tabs($channel_id, $entry_id = '')
+    public function publish_tabs($channel_id, $entry_id='')
     {
         $settings = array();
         $selected = array();
@@ -81,12 +81,12 @@ class {%= class_name %}_tab {
      * @param array All of the data available on the current submission
      * @return mixed False if there are no errors, an array of errors otherwise
      */
-    public validate_publish($params)
+    public function validate_publish($params)
     {
         $errors = array();
 
         if (!isset($params[0]['revision_post']['field_name'])) {
-            $errors[lang('required')] = 'field__name_one');
+            $errors[lang('required')] = 'field__name_one';
         }
 
         return empty($errors) ? false : $errors;
@@ -100,7 +100,7 @@ class {%= class_name %}_tab {
      *
      * @param array The top level arrays consisting of: 'meta', 'data', 'mod_data', and 'entry_id'
      */
-    public publish_data_db($params)
+    public function publish_data_db($params)
     {
         if (!isset($params['mod_data']['field_name_one']) OR $params['mod_data']['field_name_one'] == '') {
             return;
@@ -122,7 +122,7 @@ class {%= class_name %}_tab {
      *
      * @param array The entry_id's being deleted
      */
-    public publish_data_delete_db($params)
+    public function publish_data_delete_db($params)
     {
         // code...
     }

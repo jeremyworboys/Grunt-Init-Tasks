@@ -33,27 +33,6 @@ class {%= class_name %}_tab {
     public function publish_tabs($channel_id, $entry_id='')
     {
         $settings = array();
-        $selected = array();
-        $existing_files = array();
-
-        $query = $this->EE->db->get('download_files');
-
-        foreach ($query->result() as $row) {
-            $existing_files[$row->file_id] = $row->file_name;
-        }
-
-        if ($entry_id != '') {
-            $query = $this->EE->db->get_where('download_posts', array('entry_id' => $entry_id));
-
-            foreach ($query->result() as $row) {
-                $selected[] = $row->file_id;
-            }
-        }
-
-        $id_instructions = lang('id_field_instructions');
-
-        // Load the module lang file for the field label
-        $this->EE->lang->loadfile('download');
 
         $settings[] = array(
             'field_id'             => '',      // The name of the field

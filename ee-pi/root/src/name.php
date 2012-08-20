@@ -26,7 +26,7 @@ $plugin_info = array(
  */
 class {%= class_name %} {
 
-    public $return_data = "";
+    public $return_data = '';
 
     /**
      * Constructor
@@ -38,7 +38,7 @@ class {%= class_name %} {
         $this->EE =& get_instance();
 
         // Set output when no method is called
-        $this->return_data = "";
+        $this->return_data = '';
     }
 
 
@@ -49,7 +49,7 @@ class {%= class_name %} {
      */
     public function METHOD()
     {
-        $this->return_data = "";
+        $this->return_data = '';
     }
 
 

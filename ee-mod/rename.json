@@ -1,0 +1,7 @@
+{
+    "src/upd.name.php": "src/upd.{%= name %}.php",
+    "src/mcp.name.php": "src/mcp.{%= name %}.php",
+    "src/mod.name.php": "src/mod.{%= name %}.php",
+    "src/tab.name.php": "src/tab.{%= name %}.php",
+    "src/language/english/name_lang.php": "src/language/english/{%= name %}_lang.php"
+}

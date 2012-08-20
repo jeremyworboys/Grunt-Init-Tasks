@@ -36,7 +36,6 @@ class {%= class_name %}_mcp {
     public function index()
     {
         $this->EE->cp->set_variable('cp_page_title', $this->EE->lang->line('{%= name %}_module_name')); // This also sets the current breadcrumb text
-        $this->EE->cp->set_breadcrumb(BASE.AMP.'C=addons_modules'.AMP.'M=show_module_cp'.AMP.'module=module_name', $this->EE->lang->line('{%= name %}_module_name'));
 
         // Prepare data to be sent to the view file
         $vars = array();
